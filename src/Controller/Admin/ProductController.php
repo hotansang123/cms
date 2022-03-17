@@ -18,8 +18,16 @@ class ProductController extends AbstractController {
      * @Method({"GET"})
      */
     public function index() {
+        $categories = [];
+        $places = [];
         $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
-        return $this->render('admin/products/list.html.twig',['products' => $products]);
+        foreach ($products as $product) {
+            $category = $this->getDoctrine()->getRepository(Category::class)->find($product->getCategoryId());
+            $place = $this->getDoctrine()->getRepository(Place::class)->find($product->getPlaceId());
+            $categories[] = $category->getName();
+            $places[] = $place->getName();
+        }
+        return $this->render('admin/products/list.html.twig',['products' => $products, 'categories' => $categories, 'places' => $places]);
     }
 
     /**

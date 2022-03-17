@@ -20,9 +20,10 @@
                         </tr>
                     </thead>
                     <tbody align="center">
+                        {% set count = 1 %}
                         {% for place in places %}
                             <tr>
-                                <td>{{ place.id }}</td>
+                                <td>{{ count }}</td>
                                 <td><img src="{{ place.image }}" width=60px /></td>
                                 <td>{{ place.name }}</td>
                                 <td>
@@ -30,6 +31,7 @@
                                     <a href="/admin/place/edit/{{ place.id }}" style="margin-left:1rem;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
+                            {% set count = count + 1 %}
                         {% endfor %}
                     </tbody>
                 </table>

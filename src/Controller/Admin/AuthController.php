@@ -8,12 +8,11 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use App\Entity\Admin;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class AuthController extends AbstractController {
 
     /**
-     * @Route("/admin/login")
+     * @Route("/admin/login", name="admin_auth_login")
      * @Method({"GET"})
      */
     public function showFormLogin() {
