@@ -24,9 +24,6 @@
 
     </div>
     <!-- /#wrapper -->  
-    <input type="hidden" id="data" value="[]" />
-    <input type="hidden" id="data1" value="[]" />
-    <input type="hidden" id="data2" value="[]" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/metisMenu/1.1.3/metisMenu.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
@@ -37,77 +34,6 @@
     <script>
         var editor = CKEDITOR.replace('content');
         CKFinder.setupCKEditor(editor);
-    </script>
-    <!-- Google Charts Library -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      var arr = [['Day', 'Revenue']];
-      var orders = JSON.parse(document.getElementById("data").value);
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      for(x of orders){
-        arr.push([x.order_day,parseInt(x.total_price)])
-      }  
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable(
-           arr
-        );
-
-        var options = {
-          title: 'Revenue by day'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-    </script>
-    <script type="text/javascript">
-      var arr1 = [['Month', 'Revenue']];
-      var orders = JSON.parse(document.getElementById("data1").value);
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      for(x of orders){
-        arr1.push(['Month: '+x.order_month,parseInt(x.total_price)])
-      }  
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable(
-            arr1
-        );
-
-        var options = {
-          title: 'Revenue by month'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
-
-        chart.draw(data, options);
-      }
-    </script>
-    <script type="text/javascript">
-      var arr2 = [['Year', 'Revenue']];
-      var orders = JSON.parse(document.getElementById("data2").value);
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-      for(x of orders){
-        arr2.push(['Year: '+x.order_year,parseInt(x.total_price)])
-      }  
-      function drawChart() {
-
-        var data = google.visualization.arrayToDataTable(
-            arr2
-        );
-
-        var options = {
-          title: 'Revenue by year'
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
-
-        chart.draw(data, options);
-      }
     </script>
 </body>
 
