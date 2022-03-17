@@ -1,3 +1,65 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+# Admin
+admin_auth_login:
+   path: /admin/login
+   controller: App\Controller\Admin\AuthController::showFormLogin
+admin_handle_login:
+   path: /admin/post-login
+   controller: App\Controller\Admin\AuthController::postLogin
+admin_auth_logout:
+   path: /admin/logout
+   controller: App\Controller\Admin\AuthController::logout
+admin_category_list:
+   path: /admin/category/list
+   controller: App\Controller\Admin\CategoryController::index
+admin_category_create:
+   path: /admin/category/create
+   controller: App\Controller\Admin\CategoryController::create
+admin_category_store:
+   path: /admin/category/store
+   controller: App\Controller\Admin\CategoryController::store
+admin_category_edit:
+   path: /admin/category/edit/{id}
+   controller: App\Controller\Admin\CategoryController::edit
+admin_category_update:
+   path: /admin/category/update/{id}
+   controller: App\Controller\Admin\CategoryController::update
+admin_category_delete:
+   path: /admin/category/delete/{id}
+   controller: App\Controller\Admin\CategoryController::delete
+admin_product_list:
+   path: /admin/product/list
+   controller: App\Controller\Admin\ProductController::index
+admin_product_create:
+   path: /admin/product/create
+   controller: App\Controller\Admin\ProductController::create
+admin_product_store:
+   path: /admin/product/store
+   controller: App\Controller\Admin\ProductController::store
+admin_product_edit:
+   path: /admin/product/edit/{id}
+   controller: App\Controller\Admin\ProductController::edit
+admin_product_update:
+   path: /admin/product/update/{id}
+   controller: App\Controller\Admin\ProductController::update
+admin_product_delete:
+   path: /admin/product/delete/{id}
+   controller: App\Controller\Admin\ProductController::delete
+# place
+admin_place_list:
+   path: /admin/place/list
+   controller: App\Controller\Admin\PlaceController::index
+admin_place_create:
+   path: /admin/place/create
+   controller: App\Controller\Admin\PlaceController::create
+admin_place_store:
+   path: /admin/place/store
+   controller: App\Controller\Admin\PlaceController::store
+admin_place_edit:
+   path: /admin/place/edit/{id}
+   controller: App\Controller\Admin\PlaceController::edit
+admin_place_update:
+   path: /admin/place/update/{id}
+   controller: App\Controller\Admin\PlaceController::update
+admin_place_delete:
+   path: /admin/place/delete/{id}
+   controller: App\Controller\Admin\PlaceController::delete
