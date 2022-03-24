@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 class AuthController extends AbstractController {
 
     /**
-     * @Route("/admin/login", name="admin_auth_login")
+     * @Route("/", name="admin_auth_login")
      * @Method({"GET"})
      */
     public function showFormLogin() {

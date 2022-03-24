@@ -1,6 +1,6 @@
 # Admin
 admin_auth_login:
-   path: /admin/login
+   path: /
    controller: App\Controller\Admin\AuthController::showFormLogin
 admin_handle_login:
    path: /admin/post-login
