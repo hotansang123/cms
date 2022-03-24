@@ -1,0 +1,1 @@
+tạo database tên là cms_project và import file cms_project.sql
